@@ -7,81 +7,84 @@ const SECRET = 'SW2019aluno';
 var httpProxy = require('express-http-proxy');
 
 //inicializa o proxy para a URL base do microsserviço*
-var microserviceProxy = httpProxy('http://localhost:3000');
+var livrariaProxy = httpProxy('https://sw6n1.herokuapp.com');
 
 // PRIMEIRA API - Livros
 // GET - retorna todos livros
 router.get('/livros', (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  livrariaProxy( req, res, next );
 });
 
 // GET - retorna um  livro
 router.get('/livros/:id', (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  livrariaProxy( req, res, next );
 });
 
 // POST - cria um livro
 router.post('/livros', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  livrariaProxy( req, res, next );
 });
 
 // UPDATE - atualiza um livro
 router.put('/livros/:id', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  livrariaProxy( req, res, next );
 });
 
 // DELETE - Deleta um livro
 router.delete('/livros/:id', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  livrariaProxy( req, res, next );
 });
 
 //#####################
 //SEGUNDA API - Pedidos
 //#####################
 
+//inicializa o proxy para a URL base do microsserviço*
+var pedidosProxy = httpProxy('');
+
 // GET - retorna todos pedidos
 router.get('/pedidos', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  pedidosProxy( req, res, next );
 });
 
 // GET - retorna um  pedido
 router.get('/pedidos/:id', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  pedidosProxy( req, res, next );
 });
 
 // POST - cria um pedido
 router.post('/pedidos', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  pedidosProxy( req, res, next );
 });
 
 // UPDATE - atualiza um pedido
 router.put('/pedidos/:id', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  pedidosProxy( req, res, next );
 });
 
 // DELETE - Deleta um pedido
 router.delete('/pedidos/:id', verificaToken, (req, res, next) => {
   req.originalUrl = '/api' + req.originalUrl;
   req.url = '/api' + req.url;
-  microserviceProxy( req, res, next );
+  pedidosProxy( req, res, next );
 });
 
 /* GET home page. */
