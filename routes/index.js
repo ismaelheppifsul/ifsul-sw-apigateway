@@ -50,7 +50,7 @@ router.delete('/livros/:id', verificaToken, (req, res, next) => {
 //#####################
 
 //inicializa o proxy para a URL base do microsserviço*
-var pedidosProxy = httpProxy('');
+var pedidosProxy = httpProxy('https://microsservicossw.herokuapp.com/');
 
 // GET - retorna todos pedidos
 router.get('/pedidos', verificaToken, (req, res, next) => {
